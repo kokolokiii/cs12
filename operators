@@ -1,0 +1,43 @@
+public class OperatorsAA {
+     
+    public static void main(String [] args) {
+     
+        // Data: variable setup, constants, user inputs 
+        double sandwichLunch;
+        double chipSide;
+        double sodaDrink;
+        double totalLunchPrice;
+        int childAge;
+        int ageYears;
+        int ageAddedMonths;
+        double itemCost;
+        double finalCost;
+        
+        // Constants
+        final int MONTHS_PER_YEAR;
+        final double PLACER_SALES_TAX;
+             
+        // Initialization
+        sandwichLunch = 11.99;
+        chipSide = 3.96;
+        sodaDrink = 2.99;
+        childAge = 27;   //in months
+        itemCost = 15.99;
+        MONTHS_PER_YEAR = 12;
+        PLACER_SALES_TAX = .0725;
+                       
+        // Computation: algorithms
+        totalLunchPrice = sandwichLunch + chipSide + sodaDrink;
+        ageYears = childAge / MONTHS_PER_YEAR;
+        ageAddedMonths = childAge % MONTHS_PER_YEAR;
+        finalCost = itemCost * PLACER_SALES_TAX; 
+
+        // Output: formatting, display
+        System.out.println(" #1 Total lunch price w/o tax: $" + totalLunchPrice); 
+        System.out.println(" #2 27 months old in years: " + ageYears);
+        System.out.println(" #3 27 months old in added months: " + ageAddedMonths);
+        System.out.println(" #4 Target item's sales tax: " + finalCost);
+         
+    } // End main 
+     
+} // End class
