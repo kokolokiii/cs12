@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class MethodsAA {
+    
+    public static void main(String [] args) {
+    
+        //----DATA-----
+        //declarations
+        double tempFahren;  //input
+        double tempCelsius; //output
+        double amtUsd;      //input
+        double amtEuro;     //output
+    
+        //Problem A: Computations and Output (convert Fahrenheit to Celsius)
+        tempFahren = getDoubleValue("Enter number of degrees in fahrenheit > ");    //receive input
+        tempCelsius = convertTempF2C(tempFahren);                                   //calculate conversion
+        printResult(tempFahren + " deg F is equal to " + tempCelsius + " deg C");   //print results and formatting
+        
+        //Problem B: Computations and Output (convert USD to Euros)
+        amtUsd = getDoubleValue("Enter number of US dollars > ");                   //receive input
+        amtEuro = convertDollar2Euro(amtUsd);                                       //calculate conversion
+        printResult("$" + amtUsd + " is equal to " + amtEuro + " Euros");           //print results and formatting
+        
+    } // end main
+    
+    //------METHODS-----(provided extra white space between methods for easier readability)
+    //Method 1: to retrieve generic double value
+    private static double getDoubleValue (String promptText) {
+        //data declarations
+        double inputVal;
+        Scanner input = new Scanner(System.in);
+        
+        //output
+        System.out.print(promptText);
+        inputVal = input.nextDouble();
+        
+        return inputVal;
+    }//end method 1
+    
+    
+    //Method 2: to print results from conversions
+    private static void printResult(String printResult) {
+        //output
+        System.out.println("===========================\n" 
+                           + printResult + "\n===========================\n");
+    }//end method 2
+    
+    
+    //Method 3: to convert fahrenheit to celsius
+    private static double convertTempF2C(double tempF) {
+        //data declarations
+        double tempC;
+        
+        //calculation
+        tempC = (double) 5/9 * (tempF - 32);
+        
+        return tempC;
+    }//end method 3
+    
+    
+    //Method 4: to convert dollars to euros
+    private static double convertDollar2Euro(double amountDollar) {
+        //data declaration and initialization
+        double amountEuro;
+        final double MONEY_CONVERSION_RATE = 0.935652;
+        
+        //calculation
+        amountEuro = MONEY_CONVERSION_RATE * amountDollar;
+        
+        return amountEuro;
+    }//end method 4
+
+} // end class
